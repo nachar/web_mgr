@@ -14,6 +14,15 @@ img {
 a:hover {
 	text-decoration: none;
 }
+textarea {
+    resize: none;
+    border-radius: 0 !important;
+}
+input {
+	border-radius: 0 !important;
+	margin-bottom: 10px;
+	margin-top: 0 !important;
+}
 .row{
 	margin: 0 !important;
 	padding: 0 !important;
@@ -31,6 +40,14 @@ a:hover {
 .margenesBloques {
 	padding-top: 50px;
 	padding-bottom: 50px;
+}
+.margenesBloquesSmall {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.margenesBloquesHorizontal {
+	padding-left: 15%;
+	padding-right: 15%;
 }
 .buttonBigContenedor {
 	margin-top: 30px;
@@ -74,22 +91,30 @@ a:hover {
 .BGWhite {
 	background: #FFFFFF;
 }
+.tituloVerde {
+	background: #4e8b3c;
+	color: #FFFFFF;
+}
 /**************************
 		 Navbar
 **************************/
 .navbar {
 	border: none;
 	border-radius: 0px;
+	min-height: 126px !important;
 }
 .logoContenedor {
-	width: 122px;
-	max-height: 71px;
+	margin-left: 10px;
+	width: 205px;
+	max-height: 205px;
 }
+.navbar-right{
+	margin-top: 49px;
+} 
 .navbar-right a{
 	font-weight: 500;
 	color: #6a6a6a;
 	text-transform: uppercase;
-	margin-top: 24px;
 }
 .nav>li>a {
 	border-bottom: 2px solid #FFFFFF;
@@ -99,9 +124,9 @@ a:hover {
 	border-bottom: 2px solid #d8d8d8;
 }
 .navbar-toggle {
-	margin-top: 28px;
-	width: 45px;
-	height: 40px;
+	margin-top: 47px;
+	width: 58px;
+	height: 52px;
 	background: #0a7aba;
 }
 .navbar-toggle span{
@@ -115,34 +140,26 @@ a:hover {
 /**************************
 		 Slider
 **************************/
-.carousel-indicators {
-    bottom: inherit;
-    left: inherit;
-    top: 35%;
-    right: 2%;
-    width: 40px;
+.carousel-inner {
+	height: 400px;
+	width: 100%;
+    overflow: hidden;
 }
 .carousel-indicators li {
-	width: 25px;
-	height: 25px;
-	margin-bottom: 10px;
-	display: block;
+	width: 10px;
+	height: 10px;
 	border: 2px solid;
 	border-color: #FFFFFF;
 	border-radius: 100%;
 }
 .carousel-indicators .active{
-	margin-bottom: 10px;
-	width: 25px;
-	height: 25px;
-	display: block;
+	width: 10px;
+	height: 10px;
 	border: 2px solid;
 	border-color: #FFFFFF;
 	border-radius: 100%;
 }
-.sliderFlechas {
-	display: none;
-}
+
 /**************************
 		 Servicios
 **************************/
@@ -151,7 +168,9 @@ a:hover {
 	color: #FFFFFF;
 }
 .servicios img {
-	padding: 40px;
+	max-width: 180px;
+	margin: 0 auto;
+	padding: 20px;
 }
 .servicios p {
 	max-height: 59px;
@@ -228,10 +247,6 @@ footer {
 	background: #00acbf;
 	font-weight: 300;
 }
-.tituloVerde {
-	background: #4e8b3c;
-	color: #FFFFFF;
-}
 footer h1 {
 	text-transform: uppercase;
 	font-weight: 300;
@@ -257,14 +272,279 @@ footer img:hover {
 .creditos span {
 	font-weight: 500;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/****************************************************
+		  			   Pages
+****************************************************/
+
+/****************************************************
+        Pages Actividades / Nauticas / Outdoor
+****************************************************/
+.pagesHeader {
+	width: 100%;
+	height: 500px;
+	background: url(../img/pages_header_actividades.jpeg) no-repeat center center; 
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+}
+.pagesHeaderTitulo {
+	text-transform: uppercase;
+	color: #FFFFFF;
+	font-size: 70px;
+	text-shadow: -3px 3px 5px #454545;
+}
+.contenedorVerdeAzul {
+	background: #00acbf;
+	color: #FFFFFF;
+}
+.contenedorVerdeAzul p{
+	margin-top: 30px;
+}
+.actividadesTablas thead{
+	background: #d5d5d5;
+}
+.pagesDetalleGolf h4 {
+	margin: 20px;
+}
+.pagesDetalleGolf p {
+	height: 60px;
+	overflow: hidden;
+} 
+.pagesDetalleGolf button {
+	margin-top: 10px;
+} 
+.pagesDetalleGolf img{
+	max-width: 265px;
+	margin: 0 auto;
+}
+
+.pagesDetalleGolfContenedor {
+	margin: 0 auto; 
+}
+.pagesDetalleGolfContenido {
+	float: left;
+	/*width: 250px;
+	padding: 10px;*/
+	margin: 0 auto;
+	padding: 10px;
+}
+/*Actividades Nauticas*/
+.contenedorAzul {
+	background: #019ff3;
+	color: #FFFFFF;
+}
+.contenedorAzul p{
+	margin-top: 30px;
+}
+/*Actividades Outdoor*/
+.contenedorVerde {
+	background: #4a8029;
+	color: #FFFFFF;
+}
+.contenedorVerde p{
+	margin-top: 30px;
+}
+
+/****************************************************
+		  			  Contacto
+****************************************************/
+.contacto span{
+	margin-left: -24px;
+	margin-right: 10px;
+}
+.contactoInfo {
+	padding-left: 34px;
+}
+
+/****************************************************
+		  			Inmobiliaria
+****************************************************/
+.buttonSimular {
+	text-transform: uppercase;
+	color: #FFFFFF;
+	background: #019ff3;
+	border: none;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	font-size: 20px;
+	width: 100%;
+	max-width: 300px;
+}
+.buttonSimular:hover {
+	background: #017eae;
+}
+.simulador h3 {
+	padding-top: 1.5%;
+}
+.simuladorMargenes {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.inmobiliariaDetalleContenido p{
+	margin-top: 3%;
+	margin-bottom: 3%;
+}
+.inmobiliariaDetalle {
+	padding-bottom: 30px;
+}
+
+
+
+
+
+
+/*******************************
+	 Inmobiliaria Animation
+*******************************/
+.inmobiliariaAnimation {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	margin-left: -100%;
+	-moz-transition: all .8s ease-out;  /* FF4+ */
+    -o-transition: all .8s ease-out;  /* Opera 10.5+ */
+    -webkit-transition: all .8s ease-out;  /* Saf3.2+, Chrome */
+    -ms-transition: all .8s ease-out;  /* IE10 */
+    transition: all .8s ease-out;  
+}
+.inmobiliariaAnimationAction {
+	margin-left: 0%;
+	-moz-transition: all 0.3s ease-out;  /* FF4+ */
+    -o-transition: all 0.3s ease-out;  /* Opera 10.5+ */
+    -webkit-transition: all 0.3s ease-out;  /* Saf3.2+, Chrome */
+    -ms-transition: all 0.3s ease-out;  /* IE10 */
+    transition: all 0.3s ease-out;  
+}
+.inmobiliariaImgDetalle{
+	position: relative;
+	z-index: -1;
+	overflow: hidden;
+} 
+.inmobiliariaAnimationBG{
+	position: absolute;
+	top:0;
+	left: -35%;
+	width: 100%;
+	height: 170%;
+	background: #019ff3;
+	transform: rotate(70deg) scale(1) skew(-2deg) translate(0px);
+	-webkit-transform: rotate(70deg) scale(1) skew(-2deg) translate(0px);
+	-moz-transform: rotate(70deg) scale(1) skew(-2deg) translate(0px);
+	-o-transform: rotate(70deg) scale(1) skew(-2deg) translate(0px);
+	-ms-transform: rotate(70deg) scale(1) skew(-2deg) translate(0px);
+}
+.inmobiliariaAnimationDetalle {
+	position: absolute;
+	top:0;
+	left: 0%;
+	width: 41%;
+	height: 92%;
+	color: #FFFFFF;
+	overflow: hidden;
+	margin: 10px;
+	margin-top: 20px;
+}
+.inmobiliariaAnimationDetalle img{
+	max-width: 50%;
+}
+.inmobiliariaAnimationDetalle h3{
+	text-transform: uppercase;
+	margin-top: 10%;
+}
+.inmobiliariaAnimationDetalle p {
+	margin-top: 10%;
+}
+.inmobiliariaDetalleImg {
+	float: left;
+	position: relative;
+	display: block;
+	box-sizing: border-box;
+}
+
+
+
+.inmobiliariaAnimationRight {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	margin-left: 100%;
+	-moz-transition: all .8s ease-out;  
+    -o-transition: all .8s ease-out;  
+    -webkit-transition: all .8s ease-out;  
+    -ms-transition: all .8s ease-out; 
+    transition: all .8s ease-out; 
+}
+.inmobiliariaAnimationActionRight {
+	margin-left: 0%;
+	-moz-transition: all 0.3s ease-out;  /* FF4+ */
+    -o-transition: all 0.3s ease-out;  /* Opera 10.5+ */
+    -webkit-transition: all 0.3s ease-out;  /* Saf3.2+, Chrome */
+    -ms-transition: all 0.3s ease-out;  /* IE10 */
+    transition: all 0.3s ease-out;  
+}
+.inmobiliariaAnimationBGRight{
+	position: absolute;
+	top: -20px;
+	right: -35%;
+	width: 100%;
+	height: 170%;
+	background: #019ff3;
+	transform: rotate(110deg) scale(1) skew(-2deg) translate(0px);
+	-webkit-transform: rotate(110deg) scale(1) skew(-2deg) translate(0px);
+	-moz-transform: rotate(110deg) scale(1) skew(-2deg) translate(0px);
+	-o-transform: rotate(110deg) scale(1) skew(-2deg) translate(0px);
+	-ms-transform: rotate(110deg) scale(1) skew(-2deg) translate(0px);
+}
+.inmobiliariaAnimationDetalleRight {
+	position: absolute;
+	top:0;
+	right: 0;
+	width: 41%;
+	height: 92%;
+	color: #FFFFFF;
+	overflow: hidden;
+	margin: 10px;
+	margin-top: 20px;
+}
+.inmobiliariaAnimationDetalleRight img{
+	max-width: 50%;
+	margin-left: 50%;
+	right: 0;
+}
+.inmobiliariaAnimationDetalleRight h3{
+	text-transform: uppercase;
+	margin-top: 10%;
+}
+.inmobiliariaAnimationDetalleRight p {
+	margin-top: 10%;
+}
+
+
+
+
+
+
+
 /**************************
 		 Responsive
 **************************/
-@media screen and (max-width: 1880px) {
-	.carousel-indicators {
-		top: 40%;
-	}
-}
 @media screen and (max-width: 1199px) {
 	.actividadesText {
 		width: 80%;
@@ -281,23 +561,133 @@ footer img:hover {
 		order: 1;
 	}
 }
+@media screen and (max-width: 1230px) {
+	/*Header comprimir antes*/
+	.navbar-header {
+		float: none;
+	}
+	.navbar-toggle {
+		display: block;
+	}
+	.navbar-collapse.collapse {
+		display: none!important;
+	}
+	.navbar-nav {
+		float: none!important;
+	}
+	.navbar-nav>li {
+		float: none;
+	}
+	.navbar-collapse.collapse.in{
+		display:block !important;
+	}
+	.navbar-right {
+		width: 100%
+	}
+}
 @media screen and (max-width: 991px) {
-	.carousel-indicators {
-		top: 33%;
+	.carousel-inner {
+		height: 380px;
+	}
+	.logoContenedor {
+		margin-left: 0px;
+	}
+	.actividadesTablas .col-xs-12, 
+	.actividadesTablas .col-sm-12{
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.form-group .col-xs-12 {
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+	.contactoInfo {
+		display: none;
+	}
+	.inmobiliariaDetalleImg img, .inmobiliariaImgDetalle{
+		max-width: 500px;
+		margin: 0 auto;
+	}
+	.inmobiliariaDetalleContenedorRight {
+		display: flex;
+		flex-direction: column;
+	}
+	.inmobiliariaDetalleContenido {
+		order: 2;
+	}
+	.inmobiliariaDetalleImg {
+		order: 1;
+	}
+	.inmobiliariaAnimationDetalle img{
+		display: none;
+	}
+	.inmobiliariaAnimationDetalleRight img{
+		display: none;
+	}
+	.inmobiliariaAnimationDetalle h3{
+		margin-top: 21%;
+	}
+	.inmobiliariaAnimationDetalleRight h3{
+		margin-top: 21%;
 	}
 }
 @media screen and (max-width: 767px) {
-	.sliderFlechas {
-		display: inherit;
-	}
-	.carousel-indicators {
-		display: none;
-	}
 	.titulo{
 		font-size: 40px;
 	}
+	.margenesBloquesHorizontal {
+		padding-left: 6%;
+		padding-right: 6%;
+	}
 	.servicios h1{
 		margin-bottom: 5px;
+	}
+	.carousel-inner {
+		height: 340px;
+	}
+	.navbar {
+		min-height: 89px !important;
+	}
+	.logoContenedor {
+		width: 150px;
+	}
+	.navbar-toggle {
+		margin-top: 33px;
+		width: 50px;
+		height: 44px;
+	}
+	.pagesDetalleGolf button {
+		margin-bottom: 30px;
+	} 
+	.actividadesTablas {
+		display: none;
+	}
+	.pagesHeaderTitulo {
+		font-size: 40px;
+	}
+	.inmobiliariaAnimationDetalle h3{
+		margin-top: 45%;
+		font-size: 22px;
+	}
+	.inmobiliariaAnimationDetalle p {
+		display: none;
+	}
+	.inmobiliariaAnimationDetalleRight h3{
+		margin-top: 45%;
+		font-size: 22px;
+	}
+	.inmobiliariaAnimationDetalleRight p {
+		display: none;
+	}
+}
+@media screen and (max-width: 520px) { 
+	.inmobiliariaAnimationDetalle h3{
+		margin-top: 40%;
+		font-size: 14px;
+	}
+	.inmobiliariaAnimationDetalleRight h3{
+		margin-top: 40%;
+		font-size: 14px;
 	}
 }
 @media screen and (max-width: 400px) {
@@ -305,13 +695,11 @@ footer img:hover {
 		width: 98%;
 	}
 }
-@media screen and (min-width: 1881px) {
-	.carousel-indicators {
-		display: none;
+@media screen and (min-width: 1550px) {
+	.carousel-inner {
+		height: 450px;
 	}
-	.sliderFlechas {
-		display: inherit;
-	}
+
 }
 
 
