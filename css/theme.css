@@ -95,6 +95,10 @@ input {
 	background: #4e8b3c;
 	color: #FFFFFF;
 }
+.tituloAzul {
+	background: #019ff3;
+	color: #FFFFFF;
+}
 /**************************
 		 Navbar
 **************************/
@@ -370,7 +374,6 @@ footer img:hover {
 .contactoInfo {
 	padding-left: 34px;
 }
-
 /****************************************************
 		  			Inmobiliaria
 ****************************************************/
@@ -402,11 +405,6 @@ footer img:hover {
 .inmobiliariaDetalle {
 	padding-bottom: 30px;
 }
-
-
-
-
-
 
 /*******************************
 	 Inmobiliaria Animation
@@ -477,8 +475,6 @@ footer img:hover {
 	box-sizing: border-box;
 }
 
-
-
 .inmobiliariaAnimationRight {
 	position: absolute;
 	top: 0;
@@ -538,29 +534,143 @@ footer img:hover {
 
 
 
+/*******************************
+	 		Nosotros
+*******************************/
+.nosotrosObjetivosContenedor p{
+	margin-top: 40px;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+.nosotrosObjetivosContenedor .col-lg-6 {
+	padding-left: 0 !important;
+}
+.nosotrosEquipoContenido h5{
+	margin: 20px;
+}
+/*******************************
+	 		Eventos
+*******************************/
+.nosotrosOfrecemos span {
+	margin-right: 10px;
+	color: #009ff3;
+} 
+.nosotrosOfrecemos h1{
+	text-transform: uppercase;
+	margin-bottom: 11%;
+}
+.nosotrosOfrecemos h4{
+	margin-bottom: 10px;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+/*******************************
+	 		Noticias
+*******************************/ 
+.blogPost h3 {
+     color: #3a3a3a;
+     margin-bottom: 30px;
+     margin-top: 30px;
+}
+.blogCompartir img{
+     max-width: 30px;
+     min-width: 30px;
+}
+.blogInfo {
+     margin-top: 20px;
+     border-color: #f7f7f7;
+     border-left: 2px solid;
+     border-right: 2px solid;
+}
+.blogInfo span{
+     margin-right: 10px;
+}
+.blogPost a {
+     color: #6b6b6b;
+} 
+.blogPost a:hover {
+     color: #171717;
+} 
+.blogBar h4{
+	margin-bottom: 10px;
+}
 
+.blog .col-xs-12,
+.blog .col-sm-6, 
+.blog .col-md-6, 
+.blog .col-lg-3 {
+     padding: 0;
+}
+.blogColor1 {
+     background: #eeeeee;
+}
+.blogColor2 {
+     background: #FFFFFF;
+}
+.blogButtonLeerMas{
+     color: #333333;
+     cursor: pointer;
+     border-bottom: 1px solid;
+     width: 41px;
+}
+.blogButtonLeerMas:hover {
+     color: #6a6a6a;
+}
+.blogContenedorText {
+     padding: 20px;
+}
+.blogContenedorContent {
+     height: 140px;
+     overflow: hidden;
+}
+
+
+/*******************************
+    Departamentos 
+*******************************/ 
+.departamentos span {
+	margin-right: 10px;
+	color: #009ff3;
+} 
+.departamentos h1{
+	text-transform: uppercase;
+	margin-bottom: 3%;
+}
+.departamentos h4{
+	margin-bottom: 10px;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+#dptosSegundoTitulo {
+	margin-top: 5%;
+}
+
+/*******************************
+          Master plan
+*******************************/ 
+.masterPlan span {
+	margin-right: 10px;
+	color: #009ff3;
+} 
+.masterPlan h4{
+	margin-bottom: 10px;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+#masterPlanItems {
+	margin-top: 50px;
+}
+.masterPlan h5{
+	color: #000000;
+	margin-bottom: 20px;
+	margin-top: 50px;
+}
 
 
 
 /**************************
 		 Responsive
 **************************/
-@media screen and (max-width: 1199px) {
-	.actividadesText {
-		width: 80%;
-	}
-	.reorder {
-		display: flex;
-		flex-flow: row wrap;
-	}
-	.reorderText {
-		order: 2;
-		background: #FFFFFF;
-	}
-	.reorderImg{
-		order: 1;
-	}
-}
 @media screen and (max-width: 1230px) {
 	/*Header comprimir antes*/
 	.navbar-header {
@@ -584,6 +694,26 @@ footer img:hover {
 	.navbar-right {
 		width: 100%
 	}
+}
+@media screen and (max-width: 1199px) {
+	.actividadesText {
+		width: 80%;
+	}
+	.reorder {
+		display: flex;
+		flex-flow: row wrap;
+	}
+	.reorderText {
+		order: 2;
+		background: #FFFFFF;
+	}
+	.reorderImg{
+		order: 1;
+	}
+	.nosotrosEquipoContenido p{
+		max-height: 60px;
+		overflow: hidden;
+	} 
 }
 @media screen and (max-width: 991px) {
 	.carousel-inner {
@@ -630,6 +760,60 @@ footer img:hover {
 	.inmobiliariaAnimationDetalleRight h3{
 		margin-top: 21%;
 	}
+	.nosotrosObjetivosContenedor img {
+		max-width: 400px;
+		margin: 0 auto;
+	}
+	.nosotrosObjetivosContenedor .col-lg-6 {
+		padding: 30px;
+		padding-right: 0 !important;
+	}
+	.nosotrosObjetivosContenedorLeft {
+		display: flex;
+		flex-flow: row wrap;
+	}
+	.nosotrosObjetivosContenedorLeftText {
+		order: 2;
+	}
+	.nosotrosObjetivosContenedorLeftImg {
+		order: 1;
+	}
+	.nosotrosEquipoContenido img{
+		max-width: 400px;
+		margin: 0 auto;
+	}
+	.nosotrosEquipoContenido p{
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+	.nosotrosEquipoContenidoLeft {
+		display: flex;
+		flex-flow: row wrap;
+	}
+	.nosotrosEquipoContenidoLeftImg {
+		order: 1;
+	}
+	.nosotrosEquipoContenidoLeftText {
+		order: 2;
+	}
+	.nosotrosEquipoContenido {
+		padding-top: 30px;
+	}
+	.blogBar {
+		margin-top: 30px;
+	}
+	.departamentos img{
+		max-width: 500px;
+		margin: 0 auto;
+		padding-top: 50px;
+	}
+	.pagesHeader{
+		height: 400px;
+	}
+	.pagesHeaderTitulo {
+		font-size: 60px;
+	}
+
 }
 @media screen and (max-width: 767px) {
 	.titulo{
@@ -678,6 +862,9 @@ footer img:hover {
 	}
 	.inmobiliariaAnimationDetalleRight p {
 		display: none;
+	}
+	.pagesHeader{
+		height: 300px;
 	}
 }
 @media screen and (max-width: 520px) { 

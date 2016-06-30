@@ -34,9 +34,9 @@ function centerDiv (){
 	setTimeout(
 		function() {
 			$('.centerDiv').each(function() {
-				var inmobiliariaDetalleContenido = $(".centerDivContenido", this).height();
-				var inmobiliariaDetalle = $(".centerDivAlto", this).height();
-				var pageHeaderMarginTop = (inmobiliariaDetalle - inmobiliariaDetalleContenido) / 2 ;
+				var contenidoAlto = $(".centerDivContenido", this).height();
+				var divAlto = $(".centerDivAlto", this).height();
+				var pageHeaderMarginTop = (divAlto - contenidoAlto) / 2 ;
 
 				if ($(window).width() >= 991) {
 					$(".centerDivContenido", this).css("paddingTop", pageHeaderMarginTop+"px");
