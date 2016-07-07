@@ -8,6 +8,10 @@
 	<!-- Bootstrap  CSS -->
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 
+	<!-- Bootstrap Dropdown Hover CSS -->
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/bootstrap-dropdownhover.min.css" rel="stylesheet">
+
 	<!-- Font -->
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900' rel='stylesheet' type='text/css'>
 	
@@ -20,6 +24,8 @@
 	<!-- Bootstrap JS-->
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 
+	<!-- Bootstrap Dropdown Hover JS -->
+    <script src="js/bootstrap-dropdownhover.min.js"></script>
 
 	<!-- Angular -->
 	<script src="js/angular.min.js"></script>
@@ -28,6 +34,9 @@
     
     <!-- JAVASCRIPT --> 
     <script src="js/app.js"></script>
+
+    <!-- LazyLoad - Blazy --> 
+    <script src="js/blazy.min.js"></script>
 
 </head>
 <body>
@@ -39,12 +48,14 @@
 	<nav class="navbar" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
+
+				<div id="nav-icon1" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+
+
 				<a class="navbar-brand" href="index.html">
 					<div class="logoContenedor">
 						<img src="img/logo.png" alt="mgr">
@@ -54,19 +65,33 @@
 			<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li>
-						<a href="#" class="text-center">Home</a>
+						<a href="index.html" class="text-center">Home</a>
 					</li>
 					<li>
-						<a href="#" class="text-center">Nosotros</a>
+						<a href="nosotros.html" class="text-center">Nosotros</a>
+					</li>
+					<li class="dropdown">
+						<a href="actividades.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-hover="dropdown" data-animations="fadeInUp">Inmobiliaria <span class="glyphicon glyphicon-menu-down"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="inmobiliaria.html">Info. Marina</a></li>
+							<li><a href="masterPlan.html">Master Plan</a></li>
+							<li><a href="departamentos.html">Departamentos</a></li>
+							<li><a href="casas.html">Casas</a></li>
+							<li><a href="departamentosAmoblados.html">Departamentos Amoblados</a></li>
+							<li><a href="propiedadFraccionada.html">Propiedad Fraccionada</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="actividades.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-hover="dropdown" data-animations="fadeInUp">Actividades <span class="glyphicon glyphicon-menu-down"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="actividades.html">Golf</a></li>
+							<li><a href="actividadesNauticas.html">Náuticas</a></li>
+							<li><a href="actividadesOutdoor.html">Outdoor</a></li>
+							<li><a href="eventos.html">Eventos</a></li>
+						</ul>
 					</li>
 					<li>
-						<a href="#" class="text-center">Inmobiliaria</a>
-					</li>
-					<li>
-						<a href="#" class="text-center">Actividades</a>
-					</li>
-					<li>
-						<a href="#" class="text-center">Contacto</a>
+						<a href="contacto.html" class="text-center">Contacto</a>
 					</li>
 				</ul>
 			</div>
@@ -88,27 +113,63 @@
 				<li data-target="#myCarousel" data-slide-to="6" class=""></li>
 			</ol>
 			<div class="carousel-inner" role="listbox">
+
 				<div class="item active">
-					<img src="img/slider1.jpg" alt="slide" class="sliderImagenes">
+					<div class="carouselDivImg b-lazy" 
+					data-src="img/slider1.jpg"
+					data-src-small="img/slider1.jpg"
+					data-src-medium="img/slider1.jpg">
+					</div>
 				</div>
+
 				<div class="item">
-					<img src="img/slider1.jpg" alt="slide" class="sliderImagenes">
+					<div class="carouselDivImg b-lazy" 
+					data-src="img/slider2.jpg"
+					data-src-small="img/slider2.jpg"
+					data-src-medium="img/slider2.jpg">
+					</div>
 				</div>
+
 				<div class="item">
-					<img src="img/slider1.jpg" alt="slide" class="sliderImagenes">
+					<div class="carouselDivImg b-lazy" 
+					data-src="img/bg-mgr-normal.jpg"
+					data-src-small="img/bg-mgr-normal.jpg"
+					data-src-medium="img/bg-mgr-normal.jpg">
+					</div>
 				</div>
+
 				<div class="item">
-					<img src="img/slider1.jpg" alt="slide" class="sliderImagenes">
+					<div class="carouselDivImg b-lazy" 
+					data-src="img/slider2.jpg"
+					data-src-small="img/slider2.jpg"
+					data-src-medium="img/slider2.jpg">
+					</div>
 				</div>
+
 				<div class="item">
-					<img src="img/slider1.jpg" alt="slide" class="sliderImagenes">
+					<div class="carouselDivImg b-lazy" 
+					data-src="img/slider1.jpg"
+					data-src-small="img/slider1.jpg"
+					data-src-medium="img/slider1.jpg">
+					</div>
 				</div>
+
 				<div class="item">
-					<img src="img/slider1.jpg" alt="slide" class="sliderImagenes">
+					<div class="carouselDivImg b-lazy" 
+					data-src="img/slider2.jpg"
+					data-src-small="img/slider2.jpg"
+					data-src-medium="img/slider2.jpg">
+					</div>
 				</div>
+
 				<div class="item">
-					<img src="img/slider1.jpg" alt="slide" class="sliderImagenes">
+					<div class="carouselDivImg b-lazy" 
+					data-src="img/slider1.jpg"
+					data-src-small="img/slider1.jpg"
+					data-src-medium="img/slider1.jpg">
+					</div>
 				</div>
+
 			</div>
 			
 			<div class="sliderFlechas">
@@ -134,25 +195,37 @@
 			<h1 class="text-center titulo">¡Tienes que vivirlo!</h1>
 			<div class="col-xs-10 col-sm-8 col-md-10 col-lg-10 col-xs-offset-1 col-sm-offset-2 col-md-offset-1 col-lg-offset-1">
 				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-					<img src="img/servicios_01.png" class="img-responsive" alt="servicios_1">
+					<img class="b-lazy img-responsive" 
+					src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+					data-src="img/servicios_01.png"
+					alt="imagen"/>
 					<p class="text-center">El mejor y más completo condominio de la VI Región.  Que Cuenta con todas las comodidades de un resort</p>
 					<h4 class="text-center">Marina Golf Rapel</h4>
 				</div>
 
 				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-					<img src="img/servicios_02.png" class="img-responsive" alt="servicios_2">
+					<img class="b-lazy img-responsive" 
+					src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+					data-src="img/servicios_02.png"
+					alt="imagen"/>
 					<p class="text-center">Nuestras casas, destacan por un moderno sistema construtivo de aislación térmica y energéticamente</p>
 					<h4 class="text-center">Casas Con Sitios</h4>
 				</div>
 
 				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-					<img src="img/servicios_03.png" class="img-responsive" alt="servicios_3">
+					<img class="b-lazy img-responsive" 
+					src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+					data-src="img/servicios_03.png"
+					alt="imagen"/>
 					<p class="text-center">Ofrecemos departamentos ubicados en torno a la cancha de golf y con vista al lago</p>
 					<h4 class="text-center">Departamentos</h4>
 				</div>
 
 				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-					<img src="img/servicios_04.png" class="img-responsive" alt="servicios_4">
+					<img class="b-lazy img-responsive" 
+					src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+					data-src="img/servicios_04.png"
+					alt="imagen"/>
 					<p class="text-center">Durante todo el año ofrecemos departamento para arriendo completamente amoblados para 6 personas</p>
 					<h4 class="text-center">Arriendos</h4>
 				</div>
@@ -166,7 +239,10 @@
 	<div class="actividades">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-7 col-lg-6">
-				<img src="img/act_01.jpg" class="img-responsive" alt="actividades">
+				<img class="b-lazy img-responsive" 
+					src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+					data-src="img/act_01.jpg"
+					alt="imagen"/>
 			</div>
 			<div class="actividadesTextContenedor col-xs-12 col-sm-12 col-md-5 col-lg-6">
 				<h1 class="titulo text-center">Actividades</h1>
@@ -205,20 +281,23 @@
 					<h3 class="tituloSecundario">Lorem ipsum dolor sit amet</h3>
 
 					<div class="buttonBigContenedor">
-						<a href="#" class="buttonBig">Ver más</a>
+						<a href="noticiasHome.html" class="buttonBig">Ver más</a>
 					</div>
 				</div>
 			</div>
 
 			<div class="BGWhite col-xs-12 col-sm-12 col-md-12 col-lg-6" style="padding:0;">
 				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="padding:0;">
-					<img src="img/noticias1.jpg" class="img-responsive" alt="">
+					<img class="b-lazy img-responsive" 
+					src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+					data-src="img/noticias1.jpg"
+					alt="imagen"/>
 				</div>
 				<div class="noticiasText col-xs-12 col-sm-6 col-md-6 col-lg-6">
 					<h4>Lorem ipsum dolor sit amet, consectetur adipisicing</h4>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore fugit alias assumenda dolor. Libero earum delectus blanditiis explicabo hic reprehenderit saepe</p>
 					<div class="buttonSmallContenedor">
-						<a href="#" class="buttonSmall">Ver más</a>
+						<a href="noticiasDetalle.html" class="buttonSmall">Ver más</a>
 					</div>
 				</div>
 			</div>
@@ -228,11 +307,14 @@
 					<h4>Lorem ipsum dolor sit amet, consectetur adipisicing</h4>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore fugit alias assumenda dolor. Libero earum delectus blanditiis explicabo hic reprehenderit saepe</p>
 					<div class="buttonSmallContenedor">
-						<a href="#" class="buttonSmall">Ver más</a>
+						<a href="noticiasDetalle.html" class="buttonSmall">Ver más</a>
 					</div>
 				</div>
 				<div class="reorderImg col-xs-12 col-sm-6 col-md-6 col-lg-6" style="padding:0;">
-					<img src="img/noticias2.jpg" class="img-responsive" alt="">
+					<img class="b-lazy img-responsive" 
+					src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+					data-src="img/noticias2.jpg"
+					alt="imagen"/>
 				</div>
 			</div>
 
@@ -241,11 +323,14 @@
 					<h4>Lorem ipsum dolor sit amet, consectetur adipisicing</h4>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore fugit alias assumenda dolor. Libero earum delectus blanditiis explicabo hic reprehenderit saepe</p>
 					<div class="buttonSmallContenedor">
-						<a href="#" class="buttonSmall">Ver más</a>
+						<a href="noticiasDetalle.html" class="buttonSmall">Ver más</a>
 					</div>
 				</div>
 				<div class="reorderImg col-xs-12 col-sm-6 col-md-6 col-lg-6" style="padding:0;">
-					<img src="img/noticias2.jpg" class="img-responsive" alt="">
+					<img class="b-lazy img-responsive" 
+					src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+					data-src="img/noticias3.jpg"
+					alt="imagen"/>
 				</div>
 			</div>
 
@@ -306,6 +391,11 @@
 			<h5 class="text-center">© 2016 <span>Marina golf Rapel</span>, All rights reserved</h5>
 		</div>
 	</div>
-	
+
+
+	<script>
+		sliderChangeListener();
+	</script>
+
 </body>
 </html>

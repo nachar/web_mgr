@@ -8,6 +8,10 @@
 	<!-- Bootstrap  CSS -->
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 
+	<!-- Bootstrap Dropdown Hover CSS -->
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/bootstrap-dropdownhover.min.css" rel="stylesheet">
+
 	<!-- Font -->
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900' rel='stylesheet' type='text/css'>
 	
@@ -20,6 +24,8 @@
 	<!-- Bootstrap JS-->
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 
+	<!-- Bootstrap Dropdown Hover JS -->
+    <script src="js/bootstrap-dropdownhover.min.js"></script>
 
 	<!-- Angular -->
 	<script src="js/angular.min.js"></script>
@@ -29,8 +35,11 @@
     <!-- JAVASCRIPT --> 
     <script src="js/app.js"></script>
 
+    <!-- LazyLoad - Blazy --> 
+    <script src="js/blazy.min.js"></script>
+
 </head>
-<body ng-app="app" ng-controller="MGRCtrl">
+<body ng-app="app" ng-controller="noticiasHomeCtrl">
 
 
 	<!---*************************
@@ -39,12 +48,14 @@
 	<nav class="navbar" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
+
+				<div id="nav-icon1" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+
+
 				<a class="navbar-brand" href="index.html">
 					<div class="logoContenedor">
 						<img src="img/logo.png" alt="mgr">
@@ -54,29 +65,45 @@
 			<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li>
-						<a href="#" class="text-center">Home</a>
+						<a href="index.html" class="text-center">Home</a>
 					</li>
 					<li>
-						<a href="#" class="text-center">Nosotros</a>
+						<a href="nosotros.html" class="text-center">Nosotros</a>
+					</li>
+					<li class="dropdown">
+						<a href="actividades.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-hover="dropdown" data-animations="fadeInUp">Inmobiliaria <span class="glyphicon glyphicon-menu-down"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="inmobiliaria.html">Info. Marina</a></li>
+							<li><a href="masterPlan.html">Master Plan</a></li>
+							<li><a href="departamentos.html">Departamentos</a></li>
+							<li><a href="casas.html">Casas</a></li>
+							<li><a href="departamentosAmoblados.html">Departamentos Amoblados</a></li>
+							<li><a href="propiedadFraccionada.html">Propiedad Fraccionada</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="actividades.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-hover="dropdown" data-animations="fadeInUp">Actividades <span class="glyphicon glyphicon-menu-down"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="actividades.html">Golf</a></li>
+							<li><a href="actividadesNauticas.html">Náuticas</a></li>
+							<li><a href="actividadesOutdoor.html">Outdoor</a></li>
+							<li><a href="eventos.html">Eventos</a></li>
+						</ul>
 					</li>
 					<li>
-						<a href="#" class="text-center">Inmobiliaria</a>
-					</li>
-					<li>
-						<a href="#" class="text-center">Actividades</a>
-					</li>
-					<li>
-						<a href="#" class="text-center">Contacto</a>
+						<a href="contacto.html" class="text-center">Contacto</a>
 					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
-
 	<!---*************************
 		      Pages Header
 	****************************-->
-	<div class="pagesHeader">
+	<div class="pagesHeader b-lazy" 
+		data-src="img/bg-mgr-normal.jpg"
+		data-src-small="img/bg-mgr-small.jpg"
+	    data-src-medium="img/bg-mgr-medium.jpg">
 		<h1 class="pagesHeaderTitulo text-center">Noticias</h1>
 	</div>
 
@@ -94,40 +121,38 @@
 	****************************-->
 
 	<!-- Contenido -->
-	<div class="row">
-		<div class="blog">
-			<div class="row">
-				<div ng-repeat="bl in blog">
-					<div ng-if="$index < 8">
-						<div ng-if="$index%2 == 0">
-							<div class="blogContenedor col-xs-12 col-sm-6 col-md-6 col-lg-3">
-								<div class="blogColor1">
-									<img ng-src="{{bl.img}}" alt="{{bl.title}}" class="img-responsive">
-									<div class="blogContenedorText">
-										<p><span class="glyphicon glyphicon-calendar"></span> {{bl.date}}</p>
-										<h4>{{bl.title}}</h4>
-										<p class="blogContenedorContent">{{bl.description}}</p>
+	<div class="blog">
+		<div class="row">
+			<div ng-repeat="bl in blog">
+				<div ng-if="$index < 8">
+					<div ng-if="$index%2 == 0">
+						<div class="blogContenedor col-xs-12 col-sm-6 col-md-6 col-lg-3">
+							<div class="blogColor1">
+								<img ng-src="{{bl.img}}" alt="{{bl.title}}" class="img-responsive">
+								<div class="blogContenedorText">
+									<p><span class="glyphicon glyphicon-calendar"></span> {{bl.date}}</p>
+									<h4>{{bl.title}}</h4>
+									<p class="blogContenedorContent">{{bl.description}}</p>
 
-										<a href="{{bl.link}}">
-											<h5 class="blogButtonLeerMas">Leer +</h5>
-										</a>
-									</div>
+									<a href="{{bl.link}}">
+										<h5 class="blogButtonLeerMas">Leer +</h5>
+									</a>
 								</div>
 							</div>
 						</div>
-						<div ng-if="$index%2 != 0">
-							<div class="blogContenedor col-xs-12 col-sm-6 col-md-6 col-lg-3">
-								<div class="blogColor2">
-									<img ng-src="{{bl.img}}" alt="{{bl.title}}" class="img-responsive">
-									<div class="blogContenedorText">
-										<p><span class="glyphicon glyphicon-calendar"></span> {{bl.date}}</p>
-										<h4>{{bl.title}}</h4>
-										<p class="blogContenedorContent">{{bl.description}}</p>
+					</div>
+					<div ng-if="$index%2 != 0">
+						<div class="blogContenedor col-xs-12 col-sm-6 col-md-6 col-lg-3">
+							<div class="blogColor2">
+								<img ng-src="{{bl.img}}" alt="{{bl.title}}" class="img-responsive">
+								<div class="blogContenedorText">
+									<p><span class="glyphicon glyphicon-calendar"></span> {{bl.date}}</p>
+									<h4>{{bl.title}}</h4>
+									<p class="blogContenedorContent">{{bl.description}}</p>
 
-										<a href="{{bl.link}}">
-											<h5 class="blogButtonLeerMas">Leer +</h5>
-										</a>
-									</div>
+									<a href="{{bl.link}}">
+										<h5 class="blogButtonLeerMas">Leer +</h5>
+									</a>
 								</div>
 							</div>
 						</div>
@@ -135,13 +160,14 @@
 				</div>
 			</div>
 		</div>
-		<a href="#">
-			<div class="text-center margenesBloques">
-				<button type="button" class="btn btn-success">Cargar Más <span class="glyphicon glyphicon-triangle-bottom"></span></button>
-			</div>
-		</a>
-
 	</div>
+	<a href="#">
+		<div class="text-center margenesBloques">
+			<button type="button" class="btn btn-success">Cargar Más <span class="glyphicon glyphicon-triangle-bottom"></span></button>
+		</div>
+	</a>
+
+
 
 
 
@@ -199,6 +225,12 @@
 			<h5 class="text-center">© 2016 <span>Marina golf Rapel</span>, All rights reserved</h5>
 		</div>
 	</div>
+
+	<script>
+		//Centrar los titulos de las páginas
+		pagesHeaderCenterHeightTitulo();
+
+	</script>
 	
 </body>
 </html>

@@ -1,34 +1,52 @@
 $( document ).ready(function() {
-	resizeSliderImg();
+	bLazyImg();
+	hamburguer();
+
 	resizeListener();
-	sliderChangeListener();
-	centerDiv();
-
-	//Centrar los titulos de las páginas
-	pagesHeaderCenterHeightTitulo();
-
-	//Actividades pages
-	pagesGolfDetalleContenidoCenter();
-
-	//Inmobiliaria
-	animationInmobiliariaHover();
-
 });
+/*********************************
+			General
+*********************************/
+function hamburguer() {
+	$('#nav-icon1').click(function(){
+		$(this).toggleClass('open');
+	});
+}//hamburguer
+function bLazyImg (){
+	window.bLazy = new Blazy({
+		offset: 0,
+		success: function(ele){
+            centerDiv();
+        }
+        , error: function(ele, msg){
+        	if(msg === 'missing'){
+                console.log("b-lazy ERROR: missing");
+            }
+            else if(msg === 'invalid'){
+                console.log("b-lazy ERROR: invalid");
+            }  
+        },
+        breakpoints: [{
+	          width: 767 // max-width
+	          , src: 'data-src-small'
+	      }
+	      , {
+	          width: 991 // max-width
+	          , src: 'data-src-medium'
+	      }]
+	  });
 
-////Inmobiliaria 
-function animationInmobiliariaHover (){
-	if ($(window).width() >= 991) {
-		$(".inmobiliariaDetalleImg").hover(function(){
-			$(".inmobiliariaAnimation", this).addClass("inmobiliariaAnimationAction");					
-			$(".inmobiliariaAnimationRight", this).addClass("inmobiliariaAnimationActionRight");				
-		}, function(){
-			$( ".inmobiliariaAnimation",this).removeClass( "inmobiliariaAnimationAction" );
-			$( ".inmobiliariaAnimationRight",this).removeClass( "inmobiliariaAnimationActionRight" );
-		});
-	} else {
-		$(".inmobiliariaAnimation").addClass("inmobiliariaAnimationAction");					
-		$(".inmobiliariaAnimationRight").addClass("inmobiliariaAnimationActionRight");	
-	}
+	centerDiv();
+}
+function resizeListener (){
+	$(window).resize(function() {
+		//resizeSliderImg();
+		pagesHeaderCenterHeightTitulo();
+		contenedorPersonalizado();
+		centerDiv();
+		animationInmobiliariaHover();
+		centerDivNosotros();
+	});
 }
 function centerDiv (){
 	setTimeout(
@@ -41,15 +59,15 @@ function centerDiv (){
 				if ($(window).width() >= 991) {
 					$(".centerDivContenido", this).css("paddingTop", pageHeaderMarginTop+"px");
 					$(".centerDivContenido", this).css("paddingBottom", pageHeaderMarginTop+"px");
+					$(".centerDivContenido", this).css("opacity", "1");
 				} else {
 					$(".centerDivContenido", this).css("paddingTop", "40px");
 					$(".centerDivContenido", this).css("paddingBottom", "40px");
+					$(".centerDivContenido", this).css("opacity", "1");
 				}
 			});
-		}, 100);
+		}, 1000);
 }
-
-
 //Pages
 function pagesHeaderCenterHeightTitulo (){
 	$('.pagesHeader').each(function() {
@@ -62,92 +80,106 @@ function pagesHeaderCenterHeightTitulo (){
 	});
 }
 
+//Index
+function sliderChangeListener (){
+	$('#myCarousel').bind('slide.bs.carousel', function (e) {
+		setTimeout(function(){
+			bLazyImg();
+		} , 100);
+	});
+}
 
 
-//Pages Actividades
-function pagesGolfDetalleContenidoCenter (){
-	$('.pagesDetalleGolf').each(function() {
-		var detalleGolfContenidoWidth = $('.pagesDetalleGolfContenido').width();
-		var pagesDetalleGolfWidth = $('.pagesDetalleGolf .row').width();
-		var numItems = $('.pagesDetalleGolfContenido').length;
+/*********************************
+		  Inmobiliaria
+*********************************/
+function animationInmobiliariaHover (){
+	if ($(window).width() >= 991) {
+		$(".inmobiliariaAnimation").removeClass("inmobiliariaAnimationAction");					
+		$(".inmobiliariaAnimationRight").removeClass("inmobiliariaAnimationActionRight");	
 
-		console.log($(window).width());
+		$(".inmobiliariaDetalleImg").hover(function(){
+			$(".inmobiliariaAnimation", this).addClass("inmobiliariaAnimationAction");					
+			$(".inmobiliariaAnimationRight", this).addClass("inmobiliariaAnimationActionRight");	
+		}, function(){
+			$( ".inmobiliariaAnimation",this).removeClass( "inmobiliariaAnimationAction" );
+			$( ".inmobiliariaAnimationRight",this).removeClass( "inmobiliariaAnimationActionRight" );
+		});
+	} else {
+		$(".inmobiliariaDetalleImg").off( "mouseenter mouseleave" );
+		$(".inmobiliariaAnimation").addClass("inmobiliariaAnimationAction");					
+		$(".inmobiliariaAnimationRight").addClass("inmobiliariaAnimationActionRight");	
+	}
+}
+
+
+/*********************************
+		  Nosotros
+*********************************/
+function centerDivNosotros (){
+	setTimeout(
+		function() {
+			$('.centerDivNosotros').each(function() {
+				var contenidoAlto = $(".centerDivContenido", this).height();
+				var divAlto = $(".centerDivAlto", this).height();
+				var pageHeaderMarginTop = (divAlto - contenidoAlto) / 2 ;
+
+				if ($(window).width() >= 700) {
+					$(".centerDivContenido", this).css("paddingTop", pageHeaderMarginTop+"px");
+					$(".centerDivContenido", this).css("paddingBottom", pageHeaderMarginTop+"px");
+					$(".centerDivContenido", this).css("opacity", "1");
+				} else {
+					$(".centerDivContenido", this).css("paddingTop", "40px");
+					$(".centerDivContenido", this).css("paddingBottom", "40px");
+					$(".centerDivContenido", this).css("opacity", "1");
+				}
+			});
+		}, 100);
+}
+
+
+/*********************************
+		  Actividades
+*********************************/
+function contenedorPersonalizado (){
+	$('.contenedorPersonalizado').each(function() {
+		var contenedorPersonalizadoElementos = $('.contenedorPersonalizado .row').width();
+		var numItems = $('.contenedorPersonalizadoContenido').length;
+
 		if ($(window).width() >= 991) {
 			if (numItems == 1){
-				$('.pagesDetalleGolfContenido').css("width", "100%");	
-				$('.pagesDetalleGolfContenido p').css("paddingLeft", "25%");	
-				$('.pagesDetalleGolfContenido p').css("paddingRight", "25%");	
+				$('.contenedorPersonalizadoContenido').css("width", "100%");	
+				$('.contenedorPersonalizadoContenido p').css("paddingLeft", "25%");	
+				$('.contenedorPersonalizadoContenido p').css("paddingRight", "25%");	
 			} else if (numItems >= 4){
 				if (numItems % 4 == 0){
-					$('.pagesDetalleGolfContenido').css("width", (pagesDetalleGolfWidth/4.01)+"px");
+					$(this).removeClass("margenesBloquesHorizontal");
+					$('.contenedorPersonalizadoContenido').css("width", ($(window).width()/4.01)+"px");
+					$('.contenedorPersonalizadoContenido').css("padding", "35px");
 				} else {
-					$('.pagesDetalleGolfContenido').css("width", (pagesDetalleGolfWidth/3.01)+"px");
+					$('.contenedorPersonalizadoContenido').css("width", (contenedorPersonalizadoElementos/3.01)+"px");
 				}
 			}else if (numItems % 2 == 0){
-				$('.pagesDetalleGolfContenido').css("width", (pagesDetalleGolfWidth/2.01)+"px");
+				$('.contenedorPersonalizadoContenido').css("width", (contenedorPersonalizadoElementos/2.01)+"px");
 			} else {
-				$('.pagesDetalleGolfContenido').css("width", (pagesDetalleGolfWidth/3.01)+"px");
+				$('.contenedorPersonalizadoContenido').css("width", (contenedorPersonalizadoElementos/3.01)+"px");
 			}
 
 		} else if ($(window).width() < 991 && $(window).width() >=  761){
 			if (numItems == 1){
-				$('.pagesDetalleGolfContenido').css("width", "100%");	
-				$('.pagesDetalleGolfContenido p').css("paddingLeft", "0");	
-				$('.pagesDetalleGolfContenido p').css("paddingRight", "0");
+				$('.contenedorPersonalizadoContenido').css("width", "100%");	
+				$('.contenedorPersonalizadoContenido p').css("paddingLeft", "0");	
+				$('.contenedorPersonalizadoContenido p').css("paddingRight", "0");
 			} else if (numItems > 4){
-				$('.pagesDetalleGolfContenido').css("width", (pagesDetalleGolfWidth/3.01)+"px");
+				$('.contenedorPersonalizadoContenido').css("width", (contenedorPersonalizadoElementos/3.01)+"px");
 			}else if (numItems % 2 == 0){
-				$('.pagesDetalleGolfContenido').css("width", (pagesDetalleGolfWidth/2.1)+"px");
+				$('.contenedorPersonalizadoContenido').css("width", (contenedorPersonalizadoElementos/2.1)+"px");
 			} else {
-				$('.pagesDetalleGolfContenido').css("width", (pagesDetalleGolfWidth/3.01)+"px");
+				$('.contenedorPersonalizadoContenido').css("width", (contenedorPersonalizadoElementos/3.01)+"px");
 			}
 			
 		} else if ($(window).width() < 767){
-			$('.pagesDetalleGolfContenido').css("width", "100%");	
+			$('.contenedorPersonalizadoContenido').css("width", "100%");	
 		}
-	});
-}
-
-
-//Index
-function resizeSliderImg(){
-	$('.sliderImagenes').each(function() {
-		var winWidth = $(window).width();
-		var carouselHeight = $('.carousel-inner').height();
-		var calculoWidth = carouselHeight * 3.4 ;
-		var calculoHeight = calculoWidth / 3.4;
-
-		if (winWidth < (carouselHeight * 3) + 250){
-			var marginLeft = (calculoWidth - winWidth)/2;
-
-			$(this).css("min-height", calculoHeight + "px");
-			$(this).css("min-width", calculoWidth + "px");
-			$(this).css("marginLeft", "-"+marginLeft + "px");
-			$(this).css("marginTop", "0px");
-		} else {
-			var marginTop = ($(this).height() - carouselHeight)/2;
-
-			$(this).css("min-width", "100%");
-			$(this).css("min-height", carouselHeight + "px");
-			$(this).css("marginLeft", "0px");
-			$(this).css("marginTop", "-"+marginTop + "px");
-		}
-	});
-
-}
-function resizeListener (){
-	$(window).resize(function() {
-		resizeSliderImg();
-		pagesHeaderCenterHeightTitulo();
-		pagesGolfDetalleContenidoCenter();
-		centerDiv();
-		animationInmobiliariaHover();
-	});
-}
-function sliderChangeListener (){
-	$('#myCarousel').bind('slide.bs.carousel', function (e) {
-		setTimeout(function(){
-			resizeSliderImg();
-		} , 300);
 	});
 }

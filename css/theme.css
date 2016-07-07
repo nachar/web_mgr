@@ -99,55 +99,85 @@ input {
 	background: #019ff3;
 	color: #FFFFFF;
 }
+.centerDivContenido {
+	opacity: 0;
+	-webkit-transition: all 500ms ease-out;
+	-moz-transition: all 500ms ease-out;
+	-ms-transition: all 500ms ease-out;
+	-o-transition: all 500ms ease-out;
+	transition: all 500ms ease-out;
+}
+/*Lazy Load // B-Lazy*/
+.b-lazy {
+	-webkit-transition: opacity 500ms ease-in-out;
+	-moz-transition: opacity 500ms ease-in-out;
+	-o-transition: opacity 500ms ease-in-out;
+	transition: opacity 500ms ease-in-out;
+	max-width: 100%;
+	opacity: 0;
+}
+.b-lazy.b-loaded {
+	opacity: 1;
+}
+
 /**************************
 		 Navbar
 **************************/
 .navbar {
 	border: none;
 	border-radius: 0px;
-	min-height: 126px !important;
+	min-height: 90px !important;
 }
 .logoContenedor {
 	margin-left: 10px;
-	width: 205px;
+	width: 143px;
 	max-height: 205px;
 }
 .navbar-right{
-	margin-top: 49px;
+	margin-top: 33px;
 } 
 .navbar-right a{
 	font-weight: 500;
 	color: #6a6a6a;
 	text-transform: uppercase;
 }
-.nav>li>a {
-	border-bottom: 2px solid #FFFFFF;
-}
 .nav>li>a:hover {
 	background: transparent;
 	border-bottom: 2px solid #d8d8d8;
 }
-.navbar-toggle {
-	margin-top: 47px;
-	width: 58px;
-	height: 52px;
-	background: #0a7aba;
+.navbar .open>a:hover {
+	background: transparent;
+	border-bottom: 2px solid #d8d8d8;
 }
-.navbar-toggle span{
-	background: #FFFFFF;
+.dropdown-menu a {
+	text-align: center;
+	color: #6a6a6a !important;
+	padding: 15px !important;
 }
-.navbar-toggle .icon-bar {
-	width: 100%;
-	height: 4px;
-	border-radius: 4px;
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+	-webkit-transition: all 500ms ease-out;
+	-moz-transition: all 500ms ease-out;
+	-ms-transition: all 500ms ease-out;
+	-o-transition: all 500ms ease-out;
+	transition: all 500ms ease-out;
 }
+.dropdown {
+	text-align: center;
+}
+
 /**************************
 		 Slider
 **************************/
-.carousel-inner {
+#myCarousel  {
 	height: 400px;
 	width: 100%;
-    overflow: hidden;
+	overflow: hidden;
+	background: #00acbf;
+}
+.carousel-inner, .item {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
 }
 .carousel-indicators li {
 	width: 10px;
@@ -163,7 +193,22 @@ input {
 	border-color: #FFFFFF;
 	border-radius: 100%;
 }
-
+.carouselDivImg {
+	width: auto;
+	min-height: 100%;
+	height: 100%;
+	
+	background: no-repeat center center; 
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+	  
+}
+.carousel-control.left, .carousel-control.right {
+   background-image:none !important;
+   filter:none !important;
+}
 /**************************
 		 Servicios
 **************************/
@@ -278,18 +323,6 @@ footer img:hover {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /****************************************************
 		  			   Pages
 ****************************************************/
@@ -300,17 +333,23 @@ footer img:hover {
 .pagesHeader {
 	width: 100%;
 	height: 500px;
-	background: url(../img/pages_header_actividades.jpeg) no-repeat center center; 
+	background: no-repeat center center; 
 	  -webkit-background-size: cover;
 	  -moz-background-size: cover;
 	  -o-background-size: cover;
 	  background-size: cover;
+	  
 }
 .pagesHeaderTitulo {
 	text-transform: uppercase;
 	color: #FFFFFF;
 	font-size: 70px;
 	text-shadow: -3px 3px 5px #454545;
+	-webkit-transition: all 500ms ease-out;
+	-moz-transition: all 500ms ease-out;
+	-ms-transition: all 500ms ease-out;
+	-o-transition: all 500ms ease-out;
+	transition: all 500ms ease-out;
 }
 .contenedorVerdeAzul {
 	background: #00acbf;
@@ -322,28 +361,31 @@ footer img:hover {
 .actividadesTablas thead{
 	background: #d5d5d5;
 }
-.pagesDetalleGolf h4 {
+.contenedorPersonalizado h4 {
 	margin: 20px;
 }
-.pagesDetalleGolf p {
+.contenedorPersonalizado p {
 	height: 60px;
 	overflow: hidden;
 } 
-.pagesDetalleGolf button {
+.contenedorPersonalizado button {
 	margin-top: 10px;
 } 
-.pagesDetalleGolf img{
-	max-width: 265px;
+.contenedorPersonalizado img{
+	max-width: 200px;
 	margin: 0 auto;
+	-webkit-transition: all 100ms ease-out;
+	-moz-transition: all 100ms ease-out;
+	-ms-transition: all 100ms ease-out;
+	-o-transition: all 100ms ease-out;
+	transition: all 100ms ease-out;
 }
 
-.pagesDetalleGolfContenedor {
+.contenedorPersonalizadoElementos {
 	margin: 0 auto; 
 }
-.pagesDetalleGolfContenido {
+.contenedorPersonalizadoContenido {
 	float: left;
-	/*width: 250px;
-	padding: 10px;*/
 	margin: 0 auto;
 	padding: 10px;
 }
@@ -374,6 +416,32 @@ footer img:hover {
 .contactoInfo {
 	padding-left: 34px;
 }
+.buttonSubmitPagina {
+	margin-top: 10px;
+	text-transform: uppercase;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	background: #FFFFFF;
+	color: #6a6a6a;
+	border: 2px solid;
+	border-color: #6a6a6a;
+	-webkit-transition: all 1000ms ease-out;
+	-moz-transition: all 1000ms ease-out;
+	-ms-transition: all 1000ms ease-out;
+	-o-transition: all 1000ms ease-out;
+	transition: all 1000ms ease-out;
+}
+.buttonSubmitPagina:hover {
+	color: #FFFFFF;
+	background: #4a4a4a;
+	-webkit-transition: all 250ms ease-out;
+	-moz-transition: all 250ms ease-out;
+	-ms-transition: all 250ms ease-out;
+	-o-transition: all 250ms ease-out;
+	transition: all 250ms ease-out;
+}
 /****************************************************
 		  			Inmobiliaria
 ****************************************************/
@@ -393,6 +461,7 @@ footer img:hover {
 }
 .simulador h3 {
 	padding-top: 1.5%;
+	text-transform: uppercase;
 }
 .simuladorMargenes {
 	margin-top: 15px;
@@ -401,9 +470,6 @@ footer img:hover {
 .inmobiliariaDetalleContenido p{
 	margin-top: 3%;
 	margin-bottom: 3%;
-}
-.inmobiliariaDetalle {
-	padding-bottom: 30px;
 }
 
 /*******************************
@@ -469,6 +535,7 @@ footer img:hover {
 	margin-top: 10%;
 }
 .inmobiliariaDetalleImg {
+	cursor: pointer;
 	float: left;
 	position: relative;
 	display: block;
@@ -537,17 +604,20 @@ footer img:hover {
 /*******************************
 	 		Nosotros
 *******************************/
-.nosotrosObjetivosContenedor p{
+.contenedorCuadradosContenido p{
 	margin-top: 40px;
 	padding-left: 5%;
 	padding-right: 5%;
 }
-.nosotrosObjetivosContenedor .col-lg-6 {
-	padding-left: 0 !important;
-}
 .nosotrosEquipoContenido h5{
 	margin: 20px;
 }
+.nosotrosEquipoContenido p{
+	max-height: 40px;
+	overflow: hidden;
+} 
+
+
 /*******************************
 	 		Eventos
 *******************************/
@@ -666,8 +736,6 @@ footer img:hover {
 	margin-top: 50px;
 }
 
-
-
 /**************************
 		 Responsive
 **************************/
@@ -694,6 +762,19 @@ footer img:hover {
 	.navbar-right {
 		width: 100%
 	}
+	.navbar-nav .open .dropdown-menu {
+		position: static;
+		float: none;
+		width: auto;
+		margin-top: 0;
+		background-color: transparent;
+		border: 0;
+	}
+	.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+		background-color: #eee;
+		border-color: transparent;
+	}
+
 }
 @media screen and (max-width: 1199px) {
 	.actividadesText {
@@ -710,13 +791,9 @@ footer img:hover {
 	.reorderImg{
 		order: 1;
 	}
-	.nosotrosEquipoContenido p{
-		max-height: 60px;
-		overflow: hidden;
-	} 
 }
 @media screen and (max-width: 991px) {
-	.carousel-inner {
+	#myCarousel  {
 		height: 380px;
 	}
 	.logoContenedor {
@@ -760,22 +837,20 @@ footer img:hover {
 	.inmobiliariaAnimationDetalleRight h3{
 		margin-top: 21%;
 	}
-	.nosotrosObjetivosContenedor img {
-		max-width: 400px;
-		margin: 0 auto;
+	.contenedorCuadradosContenido p {
+		text-align: center;
 	}
-	.nosotrosObjetivosContenedor .col-lg-6 {
+	.contenedorCuadradosContenido .col-lg-6 {
 		padding: 30px;
-		padding-right: 0 !important;
 	}
-	.nosotrosObjetivosContenedorLeft {
+	.contenedorCuadradosContenidoLeft {
 		display: flex;
 		flex-flow: row wrap;
 	}
-	.nosotrosObjetivosContenedorLeftText {
+	.contenedorCuadradosContenidoLeftText {
 		order: 2;
 	}
-	.nosotrosObjetivosContenedorLeftImg {
+	.contenedorCuadradosContenidoLeftImg {
 		order: 1;
 	}
 	.nosotrosEquipoContenido img{
@@ -795,9 +870,6 @@ footer img:hover {
 	}
 	.nosotrosEquipoContenidoLeftText {
 		order: 2;
-	}
-	.nosotrosEquipoContenido {
-		padding-top: 30px;
 	}
 	.blogBar {
 		margin-top: 30px;
@@ -826,7 +898,7 @@ footer img:hover {
 	.servicios h1{
 		margin-bottom: 5px;
 	}
-	.carousel-inner {
+	#myCarousel  {
 		height: 340px;
 	}
 	.navbar {
@@ -836,11 +908,9 @@ footer img:hover {
 		width: 150px;
 	}
 	.navbar-toggle {
-		margin-top: 33px;
-		width: 50px;
-		height: 44px;
+		margin-right: 20px;
 	}
-	.pagesDetalleGolf button {
+	.contenedorPersonalizado button {
 		margin-bottom: 30px;
 	} 
 	.actividadesTablas {
@@ -866,6 +936,21 @@ footer img:hover {
 	.pagesHeader{
 		height: 300px;
 	}
+	.nosotrosEquipoContenido img{
+		border-radius: 100%;
+		max-width: 250px;
+	}
+	.nosotrosEquipo {
+		margin-top: 50px;
+	}
+	.nav>li>a:hover {
+		background: transparent;
+		border-bottom: 0;
+	}
+	.navbar .open>a:hover {
+		background: transparent;
+		border-bottom: 0;
+	}
 }
 @media screen and (max-width: 520px) { 
 	.inmobiliariaAnimationDetalle h3{
@@ -876,6 +961,9 @@ footer img:hover {
 		margin-top: 40%;
 		font-size: 14px;
 	}
+	.pagesHeaderTitulo {
+		font-size: 28px;
+	}
 }
 @media screen and (max-width: 400px) {
 	.actividadesText {
@@ -883,8 +971,8 @@ footer img:hover {
 	}
 }
 @media screen and (min-width: 1550px) {
-	.carousel-inner {
-		height: 450px;
+	#myCarousel  {
+		height: 470px;
 	}
 
 }
@@ -894,9 +982,75 @@ footer img:hover {
 
 
 
-
-
-
+/*************************************************************************************
+*                                      Plugins                                       *
+*************************************************************************************/
+/**********************
+*     Hamburguer      *
+**********************/
+#nav-icon1{
+	right: 20px;
+     width: 40px;
+     height: 25px;
+     padding: 20px;
+     position: relative;
+     margin: 0 auto;
+     margin-top: 30px;
+     -webkit-transform: rotate(0deg);
+     -moz-transform: rotate(0deg);
+     -o-transform: rotate(0deg);
+     transform: rotate(0deg);
+     -webkit-transition: .5s ease-in-out;
+     -moz-transition: .5s ease-in-out;
+     -o-transition: .5s ease-in-out;
+     transition: .5s ease-in-out;
+     cursor: pointer;
+}
+#nav-icon1 span {
+     display: block;
+     position: absolute;
+     height: 5px;
+     width: 100%;
+     background: #9e9e9e;
+     border-radius: 9px;
+     opacity: 1;
+     left: 0;
+     -webkit-transform: rotate(0deg);
+     -moz-transform: rotate(0deg);
+     -o-transform: rotate(0deg);
+     transform: rotate(0deg);
+     -webkit-transition: .25s ease-in-out;
+     -moz-transition: .25s ease-in-out;
+     -o-transition: .25s ease-in-out;
+     transition: .25s ease-in-out;
+}
+#nav-icon1 span:nth-child(1) {
+     top: 10px;
+}
+#nav-icon1 span:nth-child(2) {
+     top: 20px;
+}
+#nav-icon1 span:nth-child(3) {
+     top: 30px;
+}
+#nav-icon1.open span:nth-child(1) {
+     top: 18px;
+     -webkit-transform: rotate(135deg);
+     -moz-transform: rotate(135deg);
+     -o-transform: rotate(135deg);
+     transform: rotate(135deg);
+}
+#nav-icon1.open span:nth-child(2) {
+     opacity: 0;
+     left: -60px;
+}
+#nav-icon1.open span:nth-child(3) {
+     top: 18px;
+     -webkit-transform: rotate(-135deg);
+     -moz-transform: rotate(-135deg);
+     -o-transform: rotate(-135deg);
+     transform: rotate(-135deg);
+}
 
 
 
