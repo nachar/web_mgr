@@ -268,6 +268,15 @@ input {
 /**************************
 		Noticias
 **************************/
+.noticiasIndexImg {
+	min-width: 100%;
+	height: 300px;
+	background: no-repeat center center; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
 .noticiasTitulos {
 	margin-left: 10%;
 }
@@ -774,7 +783,14 @@ footer img:hover {
 		background-color: #eee;
 		border-color: transparent;
 	}
-
+	.nav>li>a:hover {
+		background: transparent;
+		border-bottom: 0;
+	}
+	.navbar .open>a:hover {
+		background: transparent;
+		border-bottom: 0;
+	}
 }
 @media screen and (max-width: 1199px) {
 	.actividadesText {
@@ -791,7 +807,14 @@ footer img:hover {
 	.reorderImg{
 		order: 1;
 	}
-}
+	.noticiasTitulos {
+		margin: 0;
+		text-align: center;
+	}
+	.noticiasTitulos h3{
+		font-size: 16px;
+	} 
+} 
 @media screen and (max-width: 991px) {
 	#myCarousel  {
 		height: 380px;
@@ -810,6 +833,9 @@ footer img:hover {
 	}
 	.contactoInfo {
 		display: none;
+	}
+	.noticiasItem {
+		margin-top: 10px;
 	}
 	.inmobiliariaDetalleImg img, .inmobiliariaImgDetalle{
 		max-width: 500px;
@@ -885,7 +911,6 @@ footer img:hover {
 	.pagesHeaderTitulo {
 		font-size: 60px;
 	}
-
 }
 @media screen and (max-width: 767px) {
 	.titulo{
@@ -943,14 +968,6 @@ footer img:hover {
 	.nosotrosEquipo {
 		margin-top: 50px;
 	}
-	.nav>li>a:hover {
-		background: transparent;
-		border-bottom: 0;
-	}
-	.navbar .open>a:hover {
-		background: transparent;
-		border-bottom: 0;
-	}
 }
 @media screen and (max-width: 520px) { 
 	.inmobiliariaAnimationDetalle h3{
@@ -970,11 +987,16 @@ footer img:hover {
 		width: 98%;
 	}
 }
+/* Responsive // min-width */
 @media screen and (min-width: 1550px) {
 	#myCarousel  {
 		height: 470px;
 	}
-
+}
+@media screen and (min-width: 992px){
+	.noticiasText {
+		min-height: 290px;
+	}
 }
 
 

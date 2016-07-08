@@ -1,7 +1,7 @@
 $( document ).ready(function() {
 	bLazyImg();
 	hamburguer();
-
+	scapeKey();
 	resizeListener();
 });
 /*********************************
@@ -12,6 +12,14 @@ function hamburguer() {
 		$(this).toggleClass('open');
 	});
 }//hamburguer
+function scapeKey() {
+	$(document).keyup(function(e) {
+		if (e.keyCode === 27) {
+			$("#bs-example-navbar-collapse-1").collapse('hide');
+			$("#nav-icon1").removeClass('open');
+		}
+	});
+}
 function bLazyImg (){
 	window.bLazy = new Blazy({
 		offset: 0,
@@ -40,7 +48,6 @@ function bLazyImg (){
 }
 function resizeListener (){
 	$(window).resize(function() {
-		//resizeSliderImg();
 		pagesHeaderCenterHeightTitulo();
 		contenedorPersonalizado();
 		centerDiv();
