@@ -544,7 +544,7 @@ footer img:hover {
 	margin-top: 10%;
 }
 .inmobiliariaDetalleImg {
-	cursor: pointer;
+	/*cursor: pointer;*/
 	float: left;
 	position: relative;
 	display: block;
