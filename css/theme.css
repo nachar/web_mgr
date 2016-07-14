@@ -911,6 +911,12 @@ footer img:hover {
 	.pagesHeaderTitulo {
 		font-size: 60px;
 	}
+	.footerSiguenos {
+		margin-top: 30px;
+	}
+	.footerDatos {
+		margin-top: 15px;
+	}
 }
 @media screen and (max-width: 767px) {
 	.titulo{
@@ -934,6 +940,9 @@ footer img:hover {
 	}
 	.navbar-toggle {
 		margin-right: 20px;
+	}
+	.departamentos img{
+		padding-top: 0px;
 	}
 	.contenedorPersonalizado button {
 		margin-bottom: 30px;
@@ -967,6 +976,12 @@ footer img:hover {
 	}
 	.nosotrosEquipo {
 		margin-top: 50px;
+	}
+	.footerContacto {
+		margin-top: 30px;
+	}
+	.footerDatos {
+		margin-top: 10px;
 	}
 }
 @media screen and (max-width: 520px) { 

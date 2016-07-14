@@ -7,6 +7,9 @@ $( document ).ready(function() {
 /*********************************
 			General
 *********************************/
+function zoomLightGallery(){
+	$("#lightgallery").lightGallery(); 
+}
 function hamburguer() {
 	$('#nav-icon1').click(function(){
 		$(this).toggleClass('open');
